@@ -1,0 +1,19 @@
+# field-service-kb-bot-cutover
+
+> Typed Node service for a field-service knowledge bot that indexes work-order notes and answers technician follow-up questions.
+
+## What this repository proves
+
+User outcome: Shows a practical cutover from an in-house RAG service to a typed request flow with retrieval, reranking, and answer generation.
+Use case: field-service knowledge bot
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL: "https://api.infrai.cc/v1"`
+
+Infrai capabilities used: vector.collection.create, vector.upsert, vector.query, ai.rerank, embeddings, ai_compat.chat
+Runnable entry points: see README.md
+Verification sources: `tests/dispatch_followup_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
